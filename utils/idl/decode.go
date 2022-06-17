@@ -108,9 +108,7 @@ func _Decode(raw_table []typePair, table []Type, index int64) (Type, error) {
 
 func Decode(bs []byte) ([]Type, []interface{}, error) {
 	if len(bs) == 0 {
-		return nil, nil, &FormatError{
-			Description: "empty",
-		}
+		return nil, nil, EMPTYError
 	}
 
 	r := bytes.NewReader(bs)

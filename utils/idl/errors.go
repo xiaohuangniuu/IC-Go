@@ -18,3 +18,14 @@ type FormatError struct {
 func (e FormatError) Error() string {
 	return fmt.Sprintf("() %s", e.Description)
 }
+
+var NOMAGICError = &FormatError{
+	Description: "no magic bytes",
+}
+var WRONGMAGICError = &FormatError{
+	Description: "wrong magic bytes",
+}
+
+var EMPTYError = &FormatError{
+	Description: "empty",
+}
